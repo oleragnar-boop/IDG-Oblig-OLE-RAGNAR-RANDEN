@@ -1,0 +1,91 @@
+6. What is the octal representation of a file that can be read and written only by its owner? 
+- A file that only can be read and written by its owner would have the octal representation of 6 0 0.
+
+7. In UNIX systems, what is the common name of the special user that can access and modify every file?
+- The user that can access and modify every file in UNIX systems is refered to as the superuser.
+
+8. Which file permission classes are available in UNIX systems?
+- Linux divides authorization into 4 classes: User, group, other and all.
+
+9. As of 2020, which percentage of servers have UNIX-like OS? 
+- As of 2020, 71.8% of servers have UNIX-like OS.
+
+10. The command ssh will 
+- SSH is a network protocol that gives users a secure way to access a computer over an unsecured network.
+
+11. UNIX Command: access your current working directory 
+- The "pwd" command will show the current working directory.
+
+12. UNIX Command: rename files (give an example)
+- To change the name of a file the "mv" command can be used. For example typing "mv hello.txt goodbye.txt" would change the name of the "hello.txt" file to "goodbye.txt".
+
+13. UNIX Command: schedule the execution of programs in the future 
+- "at" can be used to schedule a program to execute later. Crontabs could also be used.
+
+14. UNIX Command: Forcefully shutdown the command with process ID 123 
+- "kill ID 123" will shutdown the process ID123.
+
+15. UNIX Command :access your root user 
+- "sudo -s" will acess the root user.
+
+16. Crontab scheduled: At minute 30 on Sunday. 
+- 30 * * * 7
+
+17. Crontab scheduled: At minute 30 on day-of-month 15. 
+- 30 * 15 * *
+
+18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June. 
+- 30 5 * 6 sun-mon
+
+19. Script: printyour name and date 
+#!/bin/bash
+echo -n "Enter your name: "
+read name
+now=$(date)
+echo "$name"
+echo "$now"
+
+20. Script: add two numeric values, print the result 
+#!/bin/bash
+echo -n "Enter a number: "
+read num1
+echo -n "Enter another number: "
+read num2
+sum=`expr $num1 + $num2`
+echo "Sum of the numbers: $sum"
+
+21. Script:inputs username, prints “USERNAME stored”
+#!/bin/bash
+read -p "Enter username: " username
+username=${username^^}
+echo "$username stored"
+
+22. Script:Store the output of the command “hostname” in a variable. Display “This script is running on _.” where “_” is the output of the “hostname” command.
+#!/bin/bash
+hn="$HOSTNAME"
+echo  "This script is running on $hn"
+
+23. Script:Store the output of the workingdirectory (from where the script is run) in a variable then print the variable.
+#!/bin/bash
+wdo="$PWD"
+echo "$wdo"
+
+24.Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at”+ DATE. Cronjob is scheduled every 30 minutes on today’s date(only today).
+Cronjob tutorial.
+Steps:
+	1. Access the root user by typing in "sudo -s" and entering the password to the user.
+	2. Create a cronjob by typing "crontab -e" and select your editor if prompted to. The nano editor is recommended.
+	3. To get a cronjob that prints "Task scheduled at DATE" every 30 minutes on today's date (only today) you would have to:
+ 	  - Make a file for the script to output. For example "touch obligtutorial.txt" will create a txt file named obligtutorial.
+ 	  - Set the scheduele of execution to todays date, and every 30 minutes. in this case it would be 30 * 19 11 4. since the date of writing this tutorial is thursday the 19th of november.
+ 	  - Find the path to the file you created earlier. In this case the "obligtutorial.txt" file is in a directory called "obligweb". The path looks like this "/home/olerr/obligweb/obligtutorial.txt"
+ 	  - To make the cronjob output something at all, "echo" will be used. "echo "Task scheduled at $(date)" is the syntax for this particular cronjob.
+ 	  - Now combine the three parts.
+ 	  - The whole script for this cronjob is: "30 * 19 11 4 echo "Task scheduled at $(date)" >> /home/olerr/obligweb/obligtutorial.txt"
+	4. After making (and saving) the cronjob, you will have to start it. 
+ 	  - First check the status of the cronjob by typing "service cron status" a message will say wether the cron service is running or not.
+ 	  - If it's not running, type "service cron start". Now the cronjob should be running. You can check this with the "service cron status" command, it should now say "cron is running".
+	5. After the 30 minute mark of an hour you can check the output file you made earlier. If done correctly it will now have text that looks somewhat like this "Task scheduled at Thu Nov 19 23:30:01 CET 2020".
+	6. Congratulations! You have now made a cronjob! Well done!
+
+

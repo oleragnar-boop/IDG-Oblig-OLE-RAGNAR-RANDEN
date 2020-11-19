@@ -1,0 +1,15 @@
+1. What components are part of the Von Neuman Architecture? 
+The Von Neumann architecture consists of a central processing unit (CPU), memory and input/output (I/O) interfaces.
+
+2. What is user space?
+User space refers to all the code that runs outside the kernel of the OS.
+
+3. What is the shell?
+The shell is a program that takes commands from the keyboard then hands them over to the OS to perform.
+
+4. Where is the shell located?
+The shell is the outermost layer around the OS.
+
+5. What is the main task of the shell?
+The main task of the shell is to execute all the programs that you request from your terminal.
+

@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+    font-family: Verdana, sans-serif;
+    line-height: 2;
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-family: Georgia, serif;
+}
+h3 {
+    color: white;
+    text-transform: capitalize;
+    font-family: Georgia, serif;
+}
+p {
+    color: white;
+    text-indent: 2rem;
+}
